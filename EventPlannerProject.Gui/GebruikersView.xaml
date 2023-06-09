@@ -1,0 +1,39 @@
+﻿<Window x:Class="EventPlannerProject.Gui.GebruikersView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:EventPlannerProject.Gui"
+        mc:Ignorable="d"
+        Title="GebruikersView" Height="550" Width="800">
+    <Grid>
+
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>-->
+
+        <ListBox x:Name="userListBox" Height="300" MouseDoubleClick="UserListBox_MouseDoubleClick" Margin="200,89,210,45" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Voornaam}" Margin="0 0 5 0" />
+                        <TextBlock Text="{Binding Naam}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Column="0" Margin="0,0,10,360" Grid.Row="0">
+
+            <StackPanel Orientation="Horizontal" Width="441" Height="50" HorizontalAlignment="Center">
+                <Label Content="Zoek gebruiker:" Width="100" Height="26"/>
+                <TextBox x:Name="txtSearch" Width="200" Height="24"/>
+                <Button Content="Search" Click="SearchButton_Click" Height="24"/>
+            </StackPanel>
+            <Button Content="Maak een nieuw dagplan aan" Width="200" Click="NieuwDagplan_Click" />
+
+
+        </StackPanel>
+
+    </Grid>
+</Window>
